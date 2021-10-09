@@ -110,7 +110,7 @@ setup(
     description = "An advanced menu for MATE. Supports filtering, favorites, autosession, and many other features.",
     license = 'GPLv2+',
     author = 'Martin Wimpress',
-    url = 'https://github.com/dikasetyaprayogi/mate-menu//',
+    url = 'https://github.com/dikasetyaprayogi/mate-menu/',
     packages = [ 'mate_menu', 'mate_menu.plugins', ],
     # package_dir = {
     #     '': '.',
