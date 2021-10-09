@@ -122,12 +122,6 @@
       <description></description>
     </key>
 
-    <key type="b" name="enable-google">
-      <default>true</default>
-      <summary></summary>
-      <description></description>
-    </key>
-
     <key type="b" name="enable-wikipedia">
       <default>true</default>
       <summary></summary>

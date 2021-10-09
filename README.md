@@ -1,3 +1,11 @@
+
+This is the libre version of MATE MENU from parabola gnu linux libre community
+
+  * removed google search integration
+  * only recommends libre apps
+
+ORIGINAL NOTICE
+---------------
 This is MATE Menu, a fork of [MintMenu](https://github.com/linuxmint/mintmenu).
 
   * MATE Menu removes the Mint specific search options.

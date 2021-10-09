@@ -276,7 +276,6 @@ class pluginclass( object ):
             self.settings.bindGSettingsEntryToVar( "int", "default-tab", self, "defaultTab" )
             self.settings.bindGSettingsEntryToVar( "bool", "always-show-search", self, "alwaysshowsearch" )
             self.settings.bindGSettingsEntryToVar( "bool", "enable-ddg", self, "enableddg" )
-            self.settings.bindGSettingsEntryToVar( "bool", "enable-google", self, "enablegoogle" )
             self.settings.bindGSettingsEntryToVar( "bool", "enable-wikipedia", self, "enablewikipedia" )
             self.settings.bindGSettingsEntryToVar( "bool", "enable-dictionary", self, "enabledictionary" )
             self.settings.bindGSettingsEntryToVar( "bool", "enable-computer", self, "enablecomputer" )
@@ -470,7 +469,6 @@ class pluginclass( object ):
         self.rememberFilter = self.settings.get( "bool", "remember-filter")
         self.alwaysshowsearch = self.settings.get( "bool", "always-show-search")
         self.enableddg = self.settings.get( "bool", "enable-ddg")
-        self.enablegoogle = self.settings.get( "bool", "enable-google")
         self.enablewikipedia = self.settings.get( "bool", "enable-wikipedia")
         self.enabledictionary = self.settings.get( "bool", "enable-dictionary")
         self.enablecomputer = self.settings.get( "bool", "enable-computer")
@@ -619,17 +617,6 @@ class pluginclass( object ):
             suggestionButton.connect("clicked", self.search_ddg)
             suggestionButton.set_text(_("Search DuckDuckGo for %s") % text)
             suggestionButton.set_image(prefix % "ddg.png", self.iconSize)
-            self.applicationsBox.add(suggestionButton)
-            if not focused:
-                self.applicationsBox.get_children()[-1].grab_focus()
-                focused = True
-            self.suggestions.append(suggestionButton)
-
-        if self.enablegoogle:
-            suggestionButton = SuggestionButton("list-add", self.iconSize, "")
-            suggestionButton.connect("clicked", self.search_google)
-            suggestionButton.set_text(_("Search Google for %s") % text)
-            suggestionButton.set_image(prefix % "google.png", self.iconSize)
             self.applicationsBox.add(suggestionButton)
             if not focused:
                 self.applicationsBox.get_children()[-1].grab_focus()
@@ -926,10 +913,6 @@ class pluginclass( object ):
         menuItem.connect("activate", self.search_ddg)
         menu.append(menuItem)
 
-        menuItem = self.createImageMenuItem(_("Search Google"), prefix % "google.png")
-        menuItem.connect("activate", self.search_google)
-        menu.append(menuItem)
-
         menuItem = self.createImageMenuItem(_("Search Wikipedia"), prefix % "wikipedia.png")
         menuItem.connect("activate", self.search_wikipedia)
         menu.append(menuItem)
@@ -973,12 +956,6 @@ class pluginclass( object ):
         text = self.searchEntry.get_text()
         text = text.replace(" ", "+")
         subprocess.call(['xdg-open', 'https://duckduckgo.com/?q=' + text])
-        self.mateMenuWin.hide()
-
-    def search_google(self, widget):
-        text = self.searchEntry.get_text()
-        text = text.replace(" ", "+")
-        subprocess.call(['xdg-open', 'https://www.google.com/search?q=' + text])
         self.mateMenuWin.hide()
 
     def search_wikipedia(self, widget):

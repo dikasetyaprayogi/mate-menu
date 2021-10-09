@@ -87,7 +87,6 @@ data_files = [
     ("share/mate-menu/icons/search_engines".format(prefix=sys.prefix),
         [
             "data/icons/ddg.png",
-            "data/icons/google.png",
             "data/icons/wikipedia.png",
         ]
     ),

@@ -80,7 +80,6 @@ class mateMenuConfig( object ):
         self.builder.get_object("always_show_search").set_label(_("Always show search suggestions"))
         self.builder.get_object("searchEngineTitleLabel").set_text(_("Search Engines:"))
         self.builder.get_object("enable_ddg").set_label(_("DuckDuckGo"))
-        self.builder.get_object("enable_google").set_label(_("Google"))
         self.builder.get_object("enable_wikipedia").set_label(_("Wikipedia"))
         self.builder.get_object("enable_dictionary").set_label(_("Dictionary"))
         self.builder.get_object("enable_computer").set_label(_("Computer"))
@@ -135,7 +134,6 @@ class mateMenuConfig( object ):
         self.rememberFilter = self.builder.get_object( "remember_filter" )
         self.alwaysShowSearch = self.builder.get_object( "always_show_search" )
         self.enableDdg = self.builder.get_object( "enable_ddg" )
-        self.enableGoogle = self.builder.get_object( "enable_google" )
         self.enableWikipedia = self.builder.get_object( "enable_wikipedia" )
         self.enableDictionary = self.builder.get_object( "enable_dictionary" )
         self.enableComputer = self.builder.get_object( "enable_computer" )
@@ -204,7 +202,6 @@ class mateMenuConfig( object ):
 
         self.bindGSettingsValueToWidget( self.settingsApplications, "bool", "always-show-search", self.alwaysShowSearch, "toggled", self.alwaysShowSearch.set_active, self.alwaysShowSearch.get_active)
         self.bindGSettingsValueToWidget( self.settingsApplications, "bool", "enable-ddg", self.enableDdg, "toggled", self.enableDdg.set_active, self.enableDdg.get_active)
-        self.bindGSettingsValueToWidget( self.settingsApplications, "bool", "enable-google", self.enableGoogle, "toggled", self.enableGoogle.set_active, self.enableGoogle.get_active)
         self.bindGSettingsValueToWidget( self.settingsApplications, "bool", "enable-wikipedia", self.enableWikipedia, "toggled", self.enableWikipedia.set_active, self.enableWikipedia.get_active)
         self.bindGSettingsValueToWidget( self.settingsApplications, "bool", "enable-dictionary", self.enableDictionary, "toggled", self.enableDictionary.set_active, self.enableDictionary.get_active)
         self.bindGSettingsValueToWidget( self.settingsApplications, "bool", "enable-computer", self.enableComputer, "toggled", self.enableComputer.set_active, self.enableComputer.get_active)

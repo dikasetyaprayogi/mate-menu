@@ -1,5 +1,5 @@
-location:/usr/share/applications/firefox.desktop
-location:/usr/share/applications/thunderbird.desktop
+location:/usr/share/applications/iceweasel.desktop
+location:/usr/share/applications/icedove.desktop
 location:/usr/share/applications/pidgin.desktop
 location:/usr/share/applications/rhythmbox.desktop
 separator
