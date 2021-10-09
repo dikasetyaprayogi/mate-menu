@@ -1,5 +1,5 @@
 
-This is the libre version of MATE MENU from parabola gnu linux libre community
+This is the libre fork version of MATE MENU for use with gnu linux libre distribution
 
   * removed google search integration
   * only recommends libre apps
